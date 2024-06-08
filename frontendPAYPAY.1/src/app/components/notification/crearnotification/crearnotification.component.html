@@ -1,0 +1,45 @@
+<div class="title-container">
+    <div class="title-container"><h1>Registro de notificacion</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+      <mat-form-field>
+        <input matInput placeholder="messageNotification" formControlName="messageNotification" />
+        <mat-error *ngIf="form.get('messageNotification')?.hasError('required')">
+          El mensaje es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill" class="example-full-width">
+        <input
+          matInput placeholder="dateShipNotification"
+         [matDatepicker]="picker"
+          formControlName="dateShipNotification"
+          [max]="maxFecha"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('dateShipNotification')?.hasError('required')"
+          >La fecha es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input matInput placeholder="stateNotification" formControlName="stateNotification" />
+        <mat-error *ngIf="form.get('stateNotification')?.hasError('required')">
+          El estado de notificacion es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br/>
+     <!-- <mat-form-field>
+        <input matInput placeholder="movement" formControlName="movement" />
+        <mat-error *ngIf="form.get('movement')?.hasError('required')">
+          El id movement es obligatorio.</mat-error
+        >
+      </mat-form-field>-->
+      <br/>
+      <button mat-raised-button color="warn">Aceptar</button> 
+    </form>
+  </div>

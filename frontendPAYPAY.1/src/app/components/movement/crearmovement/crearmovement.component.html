@@ -1,0 +1,49 @@
+
+<div class="title-container">
+    <div class="title-container"><h1>Registro de Movimiento</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+        <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput placeholder="Ingrese fecha"
+             [matDatepicker]="picker"
+              formControlName="dateMovement"
+              [max]="maxFecha"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="form.get('dateMovement')?.hasError('required')"
+              >La fecha es obligatoria.</mat-error
+            >
+          </mat-form-field>
+          <br/>
+      <mat-form-field>
+        <input matInput placeholder="typeMovement" formControlName="typeMovement" />
+        <mat-error *ngIf="form.get('typeMovement')?.hasError('required')">
+          El tipo  es obligatorio.</mat-error
+        >
+      </mat-form-field>
+  
+      <br />
+  
+      <mat-form-field>
+        <input matInput placeholder="amountMovement" formControlName="amountMovement" />
+        <mat-error *ngIf="form.get('amountMovement')?.hasError('required')">
+          El monto es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="numberAccountBanking" formControlName="numberAccountBanking" />
+        <mat-error *ngIf="form.get('numberAccountBanking')?.hasError('required')">
+          El numero es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="warn">Aceptar</button> 
+    </form>
+  </div>
+  

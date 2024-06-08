@@ -1,0 +1,26 @@
+<div class="title-container">
+    <div class="title-container"><h1>Registro de Tipo de servicio</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+        <mat-form-field>
+            <mat-label>Modelo</mat-label>
+            <mat-select placeholder="nameTypeService" formControlName="nameTypeService">
+              <mat-option *ngFor="let m of tipos" [value]="m.value">
+                {{ m.viewValue }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('nameTypeService')?.hasError('required')">
+              El nombre es obligatorio.</mat-error
+            >
+          </mat-form-field>
+          <br/>
+      <mat-form-field>
+        <input matInput placeholder="idService" formControlName="idService" />
+        <mat-error *ngIf="form.get('idService')?.hasError('required')">
+          El nombre es obligatorio.</mat-error
+        >
+      </mat-form-field>
+  
+      <br />
+      <button mat-raised-button color="warn">Aceptar</button> 
+    </form>
+  </div>

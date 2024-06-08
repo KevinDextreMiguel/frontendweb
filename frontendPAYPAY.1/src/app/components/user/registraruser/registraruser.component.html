@@ -1,0 +1,66 @@
+<div class="title-container">
+    <div class="title-container">
+        <h1>Registro de Usuario</h1>
+    </div>
+    <form [formGroup]="form" (submit)="registrar()">
+        <mat-form-field>
+            <input matInput placeholder="Nombre" formControlName="nameUser" />
+            <mat-error *ngIf="form.get('nameUser')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+
+        <mat-form-field>
+            <input matInput placeholder="Apellidos" formControlName="lastnameUser" />
+            <mat-error *ngIf="form.get('lastnameUser')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+            <input matInput placeholder="Edad" formControlName="ageUser" />
+            <mat-error *ngIf="form.get('ageUser')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+            <input matInput placeholder="Ciudad" formControlName="cityUser" />
+            <mat-error *ngIf="form.get('cityUser')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+            <input matInput placeholder="telefono" formControlName="cellphoneUser" />
+            <mat-error *ngIf="form.get('cellphoneUser')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+            <input matInput placeholder="gmail" formControlName="gmailUser" />
+            <mat-error *ngIf="form.get('gmailUser')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+
+        <mat-form-field>
+            <input matInput placeholder="Contrasenia" formControlName="password" />
+            <mat-error *ngIf="form.get('password')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field>
+            <input matInput placeholder="enabled" formControlName="enabled" />
+            <mat-error *ngIf="form.get('enabled')?.hasError('required')">
+                El nombre es obligatorio.</mat-error>
+        </mat-form-field>
+        <br />
+
+        <button mat-raised-button color="warn">Aceptar</button>
+    </form>
+</div>

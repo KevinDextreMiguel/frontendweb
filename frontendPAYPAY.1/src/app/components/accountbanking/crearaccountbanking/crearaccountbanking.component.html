@@ -1,0 +1,51 @@
+<div class="title-container">
+    <div class="title-container"><h1>Registro de Cuenta Bancaria</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+      <mat-form-field>
+        <mat-label>Tipo entidadBank</mat-label>
+        <mat-select placeholder="typeAccountBanking" formControlName="typeAccountBanking">
+          <mat-option *ngFor="let m of tipos" [value]="m.value">
+            {{ m.viewValue }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="form.get('modelo')?.hasError('required')">
+          El modelo es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="amountAccountBanking" formControlName="amountAccountBanking" />
+        <mat-error *ngIf="form.get('amountAccountBanking')?.hasError('required')">
+          La cantidad es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill" class="example-full-width">
+        <input
+          matInput placeholder="Ingrese fecha"
+         [matDatepicker]="picker"
+          formControlName="dateOpening"
+          [max]="maxFecha"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('dateOpening')?.hasError('required')"
+          >La fecha es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br/>
+      <!--<mat-form-field>
+        <input matInput placeholder="entityBank" formControlName="entityBank" />
+        <mat-error *ngIf="form.get('entityBank')?.hasError('required')">
+          La entidad bancaria es obligatorio.</mat-error
+        >
+      </mat-form-field>-->
+      <br/>
+      <button mat-raised-button color="warn">Aceptar</button> 
+    </form>
+  </div>
+  

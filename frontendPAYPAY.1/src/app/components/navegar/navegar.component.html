@@ -1,0 +1,31 @@
+<div class="container">
+            <mat-toolbar color="primary">
+                <mat-icon>menu</mat-icon>
+                <button mat-button [matMenuTriggerFor]="menuShoe">Listar y Registrar</button>
+            </mat-toolbar>
+        
+            <mat-menu #menuShoe="matMenu">
+                <button mat-item routerLink="/listarrole">Listar Roles</button><br>
+                <button mat-item routerLink="/listaruser">Listar Usuarios</button><br>
+                <button mat-item routerLink="/listarbankingentity">Listar Entidades bancarias</button><br>
+                <button mat-item routerLink="/listaraccountbanking">Listar Cuentas bancarias</button><br>
+                <button mat-item routerLink="/listarmovement">Listar Movimientos</button><br>
+                <button mat-item routerLink="/listarnotification">Listar Notificaciones</button><br>
+                <button mat-item routerLink="/listarservicio">Listar Servicios</button><br>
+                <button mat-item routerLink="/listartypeservice">Listar Tipos de Servicios</button><br>
+                <button mat-item routerLink="/listarvoucher">Voucher</button><br>
+
+                <!-----butones para registrar-->
+                <button class="registrar" mat-item routerLink="/crearrole">Registrar Rol</button><br>
+                <button class="registrar" mat-item routerLink="/registraruser">Registrar Usuario</button><br>
+                <button class="registrar" mat-item routerLink="/crearbankingentity">Registrar Entidad bancaria</button><br>
+                <button class="registrar" mat-item routerLink="/crearaccountbanking">Registrar Cuenta bancaria</button><br>
+                <button class="registrar" mat-item routerLink="/crearmovement">Registrar Movimiento</button><br>
+                <button class="registrar" mat-item routerLink="/crearnotificacion">Registrar Notificaciòn</button><br>
+                <button class="registrar" mat-item routerLink="/crearservicio">Registrar Servicio</button><br>
+                <button class="registrar" mat-item routerLink="/creartypeservice">Registrar Tipos de Servicio</button><br>
+                <button class="registrar" routerLink="/crearvoucher">Registrar Voucher</button>
+            </mat-menu>
+    <router-outlet></router-outlet>
+</div>
+

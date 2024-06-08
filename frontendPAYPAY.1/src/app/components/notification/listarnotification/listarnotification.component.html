@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="title-container"><h1>Lista de Notificaciones</h1></div>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">      
+          <ng-container matColumnDef="idNotification">       
+           <th mat-header-cell *matHeaderCellDef>Código</th>       
+           <td mat-cell *matCellDef="let element"> {{element.idNotification}} </td>
+         </ng-container>       
+         
+          <ng-container matColumnDef="messageNotification">       
+           <th mat-header-cell *matHeaderCellDef> Mensaje </th>       
+           <td mat-cell *matCellDef="let element"> {{element.messageNotification}} </td>
+         </ng-container>       
+             
+          <ng-container matColumnDef="dateShipNotification">       
+           <th mat-header-cell *matHeaderCellDef> Fecha</th>       
+           <td mat-cell *matCellDef="let element"> {{element.dateShipNotification}} </td>       
+          </ng-container>
+          <ng-container matColumnDef="stateNotification">       
+            <th mat-header-cell *matHeaderCellDef>Estado notificacion </th>       
+            <td mat-cell *matCellDef="let element"> {{element.stateNotification}} </td>       
+           </ng-container>
+          <!-- <ng-container matColumnDef="movement">       
+            <th mat-header-cell *matHeaderCellDef> idmovement </th>       
+            <td mat-cell *matCellDef="let element"> {{element.movement}} </td>       
+           </ng-container>-->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>       
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>       
+         </table>
+  </div>

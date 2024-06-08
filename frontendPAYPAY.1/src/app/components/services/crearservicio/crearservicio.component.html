@@ -1,0 +1,61 @@
+<div class="title-container">
+    <div class="title-container"><h1>Registro de Servicio</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+      <mat-form-field>
+        <input matInput placeholder="nameService" formControlName="nameService" />
+        <mat-error *ngIf="form.get('nameService')?.hasError('required')">
+          El nombre es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="descriptionService" formControlName="descriptionService" />
+        <mat-error *ngIf="form.get('descriptionService')?.hasError('required')">
+          La descripcion es obligatorio.</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill" class="example-full-width">
+        <input
+          matInput placeholder="Ingrese fecha"
+         [matDatepicker]="picker1"
+          formControlName="dateService"
+          [max]="maxFecha"/>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+        <mat-error *ngIf="form.get('dateService')?.hasError('required')"
+          >La fecha es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br/>
+      <mat-form-field appearance="fill" class="example-full-width">
+        <input
+          matInput placeholder="Ingrese fecha"
+         [matDatepicker]="picker"
+          formControlName="timeService"/>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('timeService')?.hasError('required')"
+          >La hora es obligatoria.</mat-error
+        >
+      </mat-form-field>
+      <br/>
+      <mat-form-field >
+          <mat-label>id servicio</mat-label>
+          <input formControlName="idUser"matInput type="idUser">
+            <mat-error *ngIf="form.get('idUser')?.hasError('pattern')">
+              Ingrese un valor válido.</mat-error
+            >
+        </mat-form-field>
+        <br/>
+      <button mat-raised-button color="warn">Aceptar</button> 
+    </form>
+  </div>

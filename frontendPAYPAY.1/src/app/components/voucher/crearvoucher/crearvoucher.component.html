@@ -1,0 +1,73 @@
+<div class="title-container">
+    <div class="title-container"><h1>Registrar Voucher</h1></div>
+    <form [formGroup]="form" (submit)="registrar()">
+        <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput placeholder="Ingrese fecha"
+             [matDatepicker]="picker1"
+              formControlName="dateVoucher"/>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker1"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+            <mat-error *ngIf="form.get('dateVoucher')?.hasError('required')"
+              >La fecha es obligatoria.</mat-error
+            >
+          </mat-form-field>
+          <br/>
+
+          <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput placeholder="Ingrese horafecha"
+             [matDatepicker]="picker"
+              formControlName="hourVoucher"/>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="form.get('hourVoucher')?.hasError('required')"
+              >La hora fecha es obligatoria.</mat-error
+            >
+          </mat-form-field>
+            
+      <br />
+      <mat-form-field >
+        <mat-label>destino accountion</mat-label>
+        <input formControlName="destinationAccountVoucher"matInput type="destinationAccountVoucher">
+          <mat-error *ngIf="form.get('destinationAccountVoucher')?.hasError('required')">
+            Destino de cuenta obligatorio.</mat-error
+          >
+      </mat-form-field>
+    <br/>
+      <mat-form-field >
+        <mat-label>monto voucher</mat-label>
+        <input formControlName="amountVoucher"matInput type="amountVoucher">
+        <mat-error *ngIf="form.get('amountVoucher')?.hasError('required')">
+            La monto es obligatoria.</mat-error
+          >
+      </mat-form-field>
+    <br/>
+    <mat-form-field >
+        <mat-label>Numero operacion</mat-label>
+        <input formControlName="numberOperationVoucher"matInput type="numberOperationVoucher">
+          <mat-error *ngIf="form.get('numberOperationVoucher')?.hasError('required')">
+            Numero operacion es obligatorio.</mat-error
+          >
+      </mat-form-field>
+    <br />
+    <mat-form-field >
+        <mat-label>Id servicio</mat-label>
+        <input formControlName="serviceB"matInput type="serviceB">
+        <mat-error *ngIf="form.get('serviceB')?.hasError('required')">
+            Id servicio es obligatoria.</mat-error
+          >
+      </mat-form-field>
+    <br/>
+
+      <button mat-raised-button color="warn">Aceptar</button> 
+    </form>
+  </div>
