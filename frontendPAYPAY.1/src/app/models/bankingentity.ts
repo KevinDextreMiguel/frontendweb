@@ -8,5 +8,5 @@ export class Bankingentity{
     cellphoneBankingEntity:string=''
     websiteBankingEntity:string=''
     headquarterBankingEntity:string=''
-    user: User | null = null
+    user: User = new User()
 }
