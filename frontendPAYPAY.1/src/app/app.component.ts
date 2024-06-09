@@ -16,7 +16,8 @@ import { HomeComponent } from './views/home/home.component';
     HomeComponent,
     SobrenosotrosComponent,
     NavegarComponent,
-    RouterLink
+    RouterLink,
+    NavegarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
