@@ -94,7 +94,7 @@ export class CrearservicioComponent implements OnInit{
           descriptionService: new FormControl(data.descriptionService),
           dateService: new FormControl(data.dateService),
           timeService: new FormControl(data.timeService),
-          idUser: new FormControl(data.idUser.nameUser),
+          idUser: new FormControl(data.idUser),
         });
       });
     }
