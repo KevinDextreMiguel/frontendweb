@@ -64,6 +64,7 @@ export const routes: Routes = [
 //services
     { path: 'listarservicio', component: ListarservicesComponent },
     { path: 'crearservicio', component: CrearservicioComponent },
+    { path: 'editarservicio/:id', component: CrearservicioComponent },
 //movement
     { path: 'crearmovement', component: CrearmovementComponent },
     { path: 'listarmovement', component: ListarmovementComponent },

@@ -7,7 +7,6 @@ export class Services{
     descriptionService: string = ""
 
     dateService: Date=new Date(Date.now())
-    timeService: Date=new Date(Date.now())
-
-    idUser: User | null = null
+    timeService: Date=new Date()
+    idUser: User=new User()
 }

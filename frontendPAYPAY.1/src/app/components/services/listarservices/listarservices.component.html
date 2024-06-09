@@ -3,10 +3,7 @@
         <h1 class="title">Lista de Servicios</h1>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="idService">
-            <th mat-header-cell *matHeaderCellDef>Código</th>
-            <td mat-cell *matCellDef="let element"> {{element.idService}} </td>
-        </ng-container>
+        
 
         <ng-container matColumnDef="nameService">
             <th mat-header-cell *matHeaderCellDef> Nombre </th>
@@ -23,13 +20,34 @@
         </ng-container>
         <ng-container matColumnDef="timeService">
             <th mat-header-cell *matHeaderCellDef> Hora </th>
-            <td mat-cell *matCellDef="let element"> {{element.timeService}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.timeService|date:'hh:mm'}} </td>
         </ng-container>
-        <ng-container matColumnDef="idUser">
+        <ng-container matColumnDef="nombre">
             <th mat-header-cell *matHeaderCellDef> Id Usuario </th>
-            <td mat-cell *matCellDef="let element"> {{element.idUser}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.idUser?.nameUser}} </td>
         </ng-container>
+        <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-fab color="primary" [routerLink]="['/editarservicio', element.idService]">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-fab color="primary" (click)="eliminarservicio(element.idService)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <mat-paginator [pageSizeOptions]="[4, 7, 10]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
 </div>
