@@ -1,0 +1,13 @@
+.container{
+    padding-left: 10%;
+}
+
+.title{
+    font-size: 40px;
+    color: blue;
+}
+
+th{
+    color: blue;
+    background-color: black;
+}

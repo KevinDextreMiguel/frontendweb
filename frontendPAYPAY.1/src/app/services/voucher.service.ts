@@ -25,5 +25,15 @@ export class VoucherService {
   getList() {
     return this.listaCambio.asObservable()
   }
+  listId(id: number) {
+    return this.http.get<Voucher>(`${this.url}/${id}`);
+  }
+  update(c: Voucher) {
+    return this.http.put(this.url, c);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 
 }

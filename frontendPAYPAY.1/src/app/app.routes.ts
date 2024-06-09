@@ -74,6 +74,7 @@ export const routes: Routes = [
 //voucher
     { path: 'listarvoucher', component: ListarvoucherComponent },
     { path: 'crearvoucher', component: CrearvoucherComponent },
+    { path: 'editarvoucher/:id', component: CrearvoucherComponent },
 //banking entity
     { path: 'listarbankingentity', component: ListarbankingentityComponent },
     { path: 'crearbankingentity', component: CrearbankingentityComponent },
