@@ -1,31 +1,120 @@
 <div class="container">
             <mat-toolbar color="primary">
                 <mat-icon>menu</mat-icon>
-                <button mat-button [matMenuTriggerFor]="menuShoe">Listar y Registrar</button>
-            </mat-toolbar>
-        
-            <mat-menu #menuShoe="matMenu">
-                <button mat-item routerLink="/listarrole">Listar Roles</button><br>
-                <button mat-item routerLink="/listaruser">Listar Usuarios</button><br>
-                <button mat-item routerLink="/listarbankingentity">Listar Entidades bancarias</button><br>
-                <button mat-item routerLink="/listaraccountbanking">Listar Cuentas bancarias</button><br>
-                <button mat-item routerLink="/listarmovement">Listar Movimientos</button><br>
-                <button mat-item routerLink="/listarnotification">Listar Notificaciones</button><br>
-                <button mat-item routerLink="/listarservicio">Listar Servicios</button><br>
-                <button mat-item routerLink="/listartypeservice">Listar Tipos de Servicios</button><br>
-                <button mat-item routerLink="/listarvoucher">Voucher</button><br>
+                <button mat-button >Listar y Registrar</button>
+                
+                <button mat-button [matMenuTriggerFor]="aboveMenu">Usuario</button>
+                <mat-menu #aboveMenu="matMenu" yPosition="above">
+                    <button mat-menu-item routerLink="/registraruser">
+                        <mat-icon>add</mat-icon>
+                        <span>Agregar</span>
+                      </button>
+                      <button mat-menu-item routerLink="/listaruser">
+                        <mat-icon>list</mat-icon>
+                        <span>Listar</span>
+                      </button>
+               </mat-menu>
 
-                <!-----butones para registrar-->
-                <button class="registrar" mat-item routerLink="/crearrole">Registrar Rol</button><br>
-                <button class="registrar" mat-item routerLink="/registraruser">Registrar Usuario</button><br>
-                <button class="registrar" mat-item routerLink="/crearbankingentity">Registrar Entidad bancaria</button><br>
-                <button class="registrar" mat-item routerLink="/crearaccountbanking">Registrar Cuenta bancaria</button><br>
-                <button class="registrar" mat-item routerLink="/crearmovement">Registrar Movimiento</button><br>
-                <button class="registrar" mat-item routerLink="/crearnotificacion">Registrar Notificaciòn</button><br>
-                <button class="registrar" mat-item routerLink="/crearservicio">Registrar Servicio</button><br>
-                <button class="registrar" mat-item routerLink="/creartypeservice">Registrar Tipos de Servicio</button><br>
-                <button class="registrar" routerLink="/crearvoucher">Registrar Voucher</button>
+               <button mat-button [matMenuTriggerFor]="roleMenu">Role</button>
+               <mat-menu #roleMenu="matMenu" yPosition="below">
+                <button mat-menu-item routerLink="/crearrole">
+                    <mat-icon>add</mat-icon>
+                    <span>Agregar</span>
+                  </button>
+                  <button mat-menu-item routerLink="/listarrole">
+                    <mat-icon>list</mat-icon>
+                    <span>Listar</span>
+                  </button>
+               </mat-menu>
+
+               <button mat-button [matMenuTriggerFor]="banMenu">Ent bancaria</button>
+               <mat-menu #banMenu="matMenu" xPosition="before">
+                <button mat-menu-item routerLink="/crearbankingentity">
+                    <mat-icon>add</mat-icon>
+                    <span>Agregar</span>
+                  </button>
+                  <button mat-menu-item routerLink="/listarbankingentity">
+                    <mat-icon>list</mat-icon>
+                    <span>Listar</span>
+                  </button>   
             </mat-menu>
+
+
+<button mat-button [matMenuTriggerFor]="cuenMenu">CuentaBancaria</button>
+<mat-menu #cuenMenu="matMenu" xPosition="after">
+    
+    <button mat-menu-item routerLink="/crearaccountbanking">
+        <mat-icon>add</mat-icon>
+        <span>Agregar</span>
+      </button>
+      <button mat-menu-item routerLink="/listaraccountbanking">
+        <mat-icon>list</mat-icon>
+        <span>Listar</span>
+      </button> 
+</mat-menu> 
+
+<button mat-button [matMenuTriggerFor]="moviMenu">Movimiento</button>
+<mat-menu #moviMenu="matMenu" xPosition="after">
+    <button mat-menu-item routerLink="/crearmovement">
+        <mat-icon>add</mat-icon>
+        <span>Agregar</span>
+      </button>
+      <button mat-menu-item routerLink="/listarmovement">
+        <mat-icon>list</mat-icon>
+        <span>Listar</span>
+      </button> 
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="notiMenu">notificacion</button>
+<mat-menu #notiMenu="matMenu" xPosition="after">
+  <button mat-menu-item routerLink="/crearnotificacion">
+    <mat-icon>add</mat-icon>
+    <span>Agregar</span>
+  </button>
+  <button mat-menu-item routerLink="/listarnotification">
+    <mat-icon>list</mat-icon>
+    <span>Listar</span>
+  </button> 
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="serMenu">Servicio</button>
+<mat-menu #serMenu="matMenu" xPosition="after">
+  <button mat-menu-item routerLink="/crearservicio">
+    <mat-icon>add</mat-icon>
+    <span>Agregar</span>
+  </button>
+  <button mat-menu-item routerLink="/listarservicio">
+    <mat-icon>list</mat-icon>
+    <span>Listar</span>
+  </button> 
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="typeMenu">Tipo servicio</button>
+<mat-menu #typeMenu="matMenu" xPosition="after">
+  <button mat-menu-item routerLink="/creartypeservice">
+    <mat-icon>add</mat-icon>
+    <span>Agregar</span>
+  </button>
+  <button mat-menu-item routerLink="/listartypeservice">
+    <mat-icon>list</mat-icon>
+    <span>Listar</span>
+  </button> 
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="vouMenu">Voucher</button>
+<mat-menu #vouMenu="matMenu" xPosition="after">
+  <button mat-menu-item routerLink="/crearvoucher">
+    <mat-icon>add</mat-icon>
+    <span>Agregar</span>
+  </button>
+  <button mat-menu-item routerLink="/listarvoucher">
+    <mat-icon>list</mat-icon>
+    <span>Listar</span>
+  </button> 
+</mat-menu>
+    </mat-toolbar>
+        
+            
     <router-outlet></router-outlet>
 </div>
 

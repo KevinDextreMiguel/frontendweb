@@ -13,6 +13,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import moment from 'moment';
 import { ServicesService } from '../../../services/services.service';
 import { Services } from '../../../models/services';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-crearvoucher',
@@ -24,7 +25,7 @@ import { Services } from '../../../models/services';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule,RouterLink],
+    MatButtonModule,RouterLink,MatIconModule],
   templateUrl: './crearvoucher.component.html',
   styleUrl: './crearvoucher.component.css'
 })

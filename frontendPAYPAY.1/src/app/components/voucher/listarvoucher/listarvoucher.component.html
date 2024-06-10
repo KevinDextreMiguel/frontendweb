@@ -1,8 +1,7 @@
 <div class="container">
     <div class="title-container"><h1>Lista de vouchers</h1></div>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">      
-               
-         
+      
           <ng-container matColumnDef="dateVoucher">       
            <th mat-header-cell *matHeaderCellDef> fecha </th>       
            <td mat-cell *matCellDef="let element"> {{element.dateVoucher}} </td>
@@ -53,3 +52,6 @@
                    aria-label="Select page of periodic elements">
     </mat-paginator>
   </div>
+
+  
+

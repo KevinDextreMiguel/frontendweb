@@ -13,6 +13,7 @@ import { MovementComponent } from '../movement/movement.component';
 import { BankingentityComponent } from '../bankingentity/bankingentity.component';
 import { AccountbankingComponent } from '../accountbanking/accountbanking.component';
 import { ListarroleComponent } from '../role/listarrole/listarrole.component';
+import {MatCardModule} from '@angular/material/card';
 @Component({
   selector: 'app-navegar',
   standalone: true,
@@ -31,7 +32,7 @@ import { ListarroleComponent } from '../role/listarrole/listarrole.component';
     NotificationComponent,
     MovementComponent,
     BankingentityComponent,
-    AccountbankingComponent,
+    AccountbankingComponent,MatCardModule
   ],
   templateUrl: './navegar.component.html',
   styleUrl: './navegar.component.css'

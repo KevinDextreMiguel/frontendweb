@@ -11,12 +11,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { Notification } from '../../../models/notification';
 import { NotificationService } from '../../../services/notification.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-crearnotification',
   standalone: true,
   imports: [ReactiveFormsModule,
-    MatFormFieldModule,
+    MatFormFieldModule,MatIconModule,
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,

@@ -1,6 +1,17 @@
 
+.menu-container {
+   display: flex;
+   justify-content: center;
+   gap: 20px; /* Ajusta este valor para el espacio entre botones */
+   flex-wrap: wrap;
+ }
+ 
+ button[mat-button] {
+   margin: 10px; /* Ajusta este valor para el espacio alrededor de los botones */
+ }
 
 .registrar{
    color: blue;
 }
+
 
