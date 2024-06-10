@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
@@ -12,7 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { User } from '../../../models/user';
 import { UserService } from '../../../services/user.service';
 
@@ -39,15 +40,23 @@ import { UserService } from '../../../services/user.service';
 export class RegistraruserComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   u: User = new User();
-
+  edicion:boolean=false;
+  id:number=0;
   constructor(
     private formBuilder: FormBuilder,
     private uS: UserService,
-    private router: Router
+    private router: Router,
+    private route:ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((data: Params) => {
+      this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
+    });
     this.form = this.formBuilder.group({
+      idUser:[''],
       nameUser: ['', Validators.required],
       lastnameUser: ['', Validators.required],
       ageUser: ['', Validators.required],
@@ -64,6 +73,7 @@ export class RegistraruserComponent implements OnInit{
 
   registrar(): void {
     if (this.form.valid) {
+      this.u.idUser = this.form.value.idUser;
       this.u.nameUser = this.form.value.nameUser;
       this.u.lastnameUser = this.form.value.lastnameUser;
       this.u.ageUser = this.form.value.ageUser;
@@ -80,6 +90,24 @@ export class RegistraruserComponent implements OnInit{
         });
       });
       this.router.navigate(['listaruser']);
+    }
+  }
+
+  init() {
+    if (this.edicion) {
+      this.uS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idUser: new FormControl(data.idUser),
+          nameUser: new FormControl(data.nameUser),
+          lastnameUser: new FormControl(data.lastnameUser),
+          ageUser: new FormControl(data.ageUser),
+          cityUser: new FormControl(data.cityUser),
+          cellphoneUser: new FormControl(data.cellphoneUser),
+          gmailUser: new FormControl(data.gmailUser),
+          password: new FormControl(data.password),
+          enabled: new FormControl(data.enabled),
+        });
+      });
     }
   }
 }

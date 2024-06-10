@@ -40,13 +40,11 @@ export class CreartypeserviceComponent {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       nameTypeService: ['', Validators.required],
-      idService: ['', Validators.required],
     });
   }
   registrar(): void {
     if (this.form.valid) {
       this.ts.nameTypeService = this.form.value.nameTypeService;
-      this.ts.idService = this.form.value.idservicio;
       this.tsS.insert(this.ts).subscribe((data) => {
         this.tsS.list().subscribe((data) => {
           this.tsS.setList(data);

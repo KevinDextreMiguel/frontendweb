@@ -3,6 +3,11 @@
         <h1>Registro de Usuario</h1>
     </div>
     <form [formGroup]="form" (submit)="registrar()">
+        <mat-form-field class="example-full-width"  *ngIf="edicion" >
+            <mat-label>Codigo</mat-label>
+            <input matInput placeholder="idUser" formControlName="idUser" />      
+          </mat-form-field>
+          <br/>
         <mat-form-field>
             <input matInput placeholder="Nombre" formControlName="nameUser" />
             <mat-error *ngIf="form.get('nameUser')?.hasError('required')">
@@ -62,5 +67,8 @@
         <br />
 
         <button mat-raised-button color="warn">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/listaruser">
+            Cancelar
+          </button>
     </form>
 </div>

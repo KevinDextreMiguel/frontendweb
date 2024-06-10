@@ -61,6 +61,7 @@ export const routes: Routes = [
     //user
     { path: 'registraruser', component: RegistraruserComponent },
     { path: 'listaruser', component: ListaruserComponent },
+    { path: 'editaruser/:id', component: RegistraruserComponent },
 //services
     { path: 'listarservicio', component: ListarservicesComponent },
     { path: 'crearservicio', component: CrearservicioComponent },

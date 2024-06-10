@@ -5,5 +5,5 @@ export class Notification{
     messageNotification:string=''
     dateShipNotification:Date=new Date(Date.now())
     stateNotification:string=''
-    movement: Movement | null = null
+    movement: Movement =new Movement()
 }

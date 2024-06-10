@@ -12,14 +12,6 @@
               El nombre es obligatorio.</mat-error
             >
           </mat-form-field>
-          <br/>
-      <mat-form-field>
-        <input matInput placeholder="idService" formControlName="idService" />
-        <mat-error *ngIf="form.get('idService')?.hasError('required')">
-          El nombre es obligatorio.</mat-error
-        >
-      </mat-form-field>
-  
       <br />
       <button mat-raised-button color="warn">Aceptar</button> 
     </form>

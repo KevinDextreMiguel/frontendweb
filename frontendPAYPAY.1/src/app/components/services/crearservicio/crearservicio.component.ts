@@ -13,6 +13,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { User } from '../../../models/user';
 import { UserService } from '../../../services/user.service';
+import { Typeservice } from '../../../models/typeservice';
+import { TypeserviceService } from '../../../services/typeservice.service';
 
 
 @Component({
@@ -37,13 +39,14 @@ export class CrearservicioComponent implements OnInit{
   edicion: boolean=false;
   id:number=0;
   listarusuario:User[]=[];
-  
+  listartiposer:Typeservice[]=[];
   constructor(
     private sS: ServicesService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private us:UserService
+    private us:UserService,
+    private tP:TypeserviceService
   ) {}
 
   ngOnInit(): void {
@@ -59,9 +62,14 @@ export class CrearservicioComponent implements OnInit{
       dateService: ['', Validators.required],
       timeService: ['', Validators.required],
       idUser: ['', Validators.required],
+      typeService: ['',Validators.required]
     });
     this.us.list().subscribe((data) => {
       this.listarusuario = data;
+    });
+
+    this.tP.list().subscribe((data) => {
+      this.listartiposer = data;
     });
   }
   registrar(): void {
@@ -77,6 +85,7 @@ export class CrearservicioComponent implements OnInit{
       dateA.setHours(hora, minuto);
       this.s.timeService = dateA;
       this.s.idUser.idUser = this.form.value.idUser;
+      this.s.typeService.idTypeService=this.form.value.typeService,
       this.sS.insert(this.s).subscribe((data) => {
         this.sS.list().subscribe((data) => {
           this.sS.setList(data);
@@ -85,6 +94,7 @@ export class CrearservicioComponent implements OnInit{
       this.router.navigate(['listarservicio']);
     }
   }
+  
   init() {
     if (this.edicion) {
       this.sS.listId(this.id).subscribe((data) => {
@@ -95,6 +105,7 @@ export class CrearservicioComponent implements OnInit{
           dateService: new FormControl(data.dateService),
           timeService: new FormControl(data.timeService),
           idUser: new FormControl(data.idUser),
+          typeService:new FormControl(data.typeService)
         });
       });
     }

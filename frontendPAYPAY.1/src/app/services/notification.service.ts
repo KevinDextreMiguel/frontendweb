@@ -25,4 +25,14 @@ export class NotificationService {
   getList() {
     return this.listaCambio.asObservable()
   }
+  listId(id: number) {
+    return this.http.get<Notification>(`${this.url}/${id}`);
+  }
+  update(c: Notification) {
+    return this.http.put(this.url, c);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }

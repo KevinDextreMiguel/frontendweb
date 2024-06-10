@@ -31,6 +31,16 @@ export class UserService {
   getList() {
     return this.listaCambio.asObservable()
   }
+  listId(id: number) {
+    return this.http.get<User>(`${this.url}/${id}`);
+  }
+  update(c: User) {
+    return this.http.put(this.url, c);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }
 
 

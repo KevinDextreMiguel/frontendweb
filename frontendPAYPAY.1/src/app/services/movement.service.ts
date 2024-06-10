@@ -28,5 +28,15 @@ export class MovementService {
   getList() {
     return this.listaCambio.asObservable()
   }
+  listId(id: number) {
+    return this.http.get<Movement>(`${this.url}/${id}`);
+  }
+  update(c: Movement) {
+    return this.http.put(this.url, c);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }
 

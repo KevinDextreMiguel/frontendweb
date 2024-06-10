@@ -56,10 +56,25 @@
           >
       </mat-form-field>
       <br/>
-    <button mat-raised-button color="warn">Aceptar</button> 
-    <button mat-raised-button color="warn" routerLink="/listarservicio">
-      Cancelar
-    </button>
+      
+      <mat-form-field >
+        <mat-label>Nombre tiposervicio</mat-label>
+        <mat-select placeholder="typeService" formControlName="typeService">
+          <mat-option *ngFor="let m of listartiposer" [value]="m.idTypeService">
+            {{ m.nameTypeService}}
+          </mat-option>
+        </mat-select> 
+            <mat-error *ngIf="form.get('typeService')?.hasError('required')">
+              Ingrese un valor válido.</mat-error
+            >
+        </mat-form-field>
+        <br/>
+      <div class="button-container">
+        <button mat-raised-button color="warn">Aceptar</button> 
+        <button mat-raised-button color="warn" routerLink="/listarservicio">
+          Cancelar
+        </button>
+      </div>
   </form>
 </div>
 
