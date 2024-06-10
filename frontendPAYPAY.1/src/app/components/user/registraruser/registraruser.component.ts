@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import {
   FormBuilder,
   FormControl,
@@ -13,7 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { User } from '../../../models/user';
 import { UserService } from '../../../services/user.service';
 
@@ -29,7 +29,7 @@ import { UserService } from '../../../services/user.service';
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,NgIf,RouterLink,MatSelectModule
   ],
   templateUrl:'./registraruser.component.html',
   styleUrl: './registraruser.component.css'
@@ -61,7 +61,6 @@ export class RegistraruserComponent implements OnInit{
       lastnameUser: ['', Validators.required],
       ageUser: ['', Validators.required],
       cityUser: ['', Validators.required],
-
       cellphoneUser: ['', Validators.required],
       gmailUser: ['', Validators.required],
       password: ['', Validators.required],
