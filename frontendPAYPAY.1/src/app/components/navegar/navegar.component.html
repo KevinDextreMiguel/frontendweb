@@ -1,31 +1,123 @@
-<div class="container">
-            <mat-toolbar color="primary">
-                <mat-icon>menu</mat-icon>
-                <button mat-button [matMenuTriggerFor]="menuShoe">Listar y Registrar</button>
-            </mat-toolbar>
-        
-            <mat-menu #menuShoe="matMenu">
-                <button mat-item routerLink="/listarrole">Listar Roles</button><br>
-                <button mat-item routerLink="/listaruser">Listar Usuarios</button><br>
-                <button mat-item routerLink="/listarbankingentity">Listar Entidades bancarias</button><br>
-                <button mat-item routerLink="/listaraccountbanking">Listar Cuentas bancarias</button><br>
-                <button mat-item routerLink="/listarmovement">Listar Movimientos</button><br>
-                <button mat-item routerLink="/listarnotification">Listar Notificaciones</button><br>
-                <button mat-item routerLink="/listarservicio">Listar Servicios</button><br>
-                <button mat-item routerLink="/listartypeservice">Listar Tipos de Servicios</button><br>
-                <button mat-item routerLink="/listarvoucher">Voucher</button><br>
+<!-- Icon Link -->
+<link
+  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  rel="stylesheet"
+/>
 
-                <!-----butones para registrar-->
-                <button class="registrar" mat-item routerLink="/crearrole">Registrar Rol</button><br>
-                <button class="registrar" mat-item routerLink="/registraruser">Registrar Usuario</button><br>
-                <button class="registrar" mat-item routerLink="/crearbankingentity">Registrar Entidad bancaria</button><br>
-                <button class="registrar" mat-item routerLink="/crearaccountbanking">Registrar Cuenta bancaria</button><br>
-                <button class="registrar" mat-item routerLink="/crearmovement">Registrar Movimiento</button><br>
-                <button class="registrar" mat-item routerLink="/crearnotificacion">Registrar Notificaciòn</button><br>
-                <button class="registrar" mat-item routerLink="/crearservicio">Registrar Servicio</button><br>
-                <button class="registrar" mat-item routerLink="/creartypeservice">Registrar Tipos de Servicio</button><br>
-                <button class="registrar" routerLink="/crearvoucher">Registrar Voucher</button>
+<body>
+  <div class="container">
+    <input type="checkbox" id="click" />
+    <label>
+      <i class="menu-btn bx bx-menu"></i>
+    </label>
+
+    <div class="sidenav">
+      <div class="logo">
+        <h2>PAYPAY</h2>
+      </div>
+
+      <div class="menu_text">
+        <p>Menu</p>
+      </div>
+
+      <div class="icon_items">
+        <ul>
+          <li>
+            <i class="bx bxs-user"></i>
+            <button mat-button [matMenuTriggerFor]="menuR"> Rol </button>
+            <mat-menu #menuR="matMenu">
+              <button mat-menu-item routerLink="/listarrole"> Listar  </button>
+              <button mat-menu-item routerLink="/crearrole">Registrar </button>
             </mat-menu>
-    <router-outlet></router-outlet>
-</div>
+          </li>
+          
+          <li>
+            <i class="bx bxs-user-circle"></i>
+            <button mat-button [matMenuTriggerFor]="menuU"> Usuario</button>
+            <mat-menu #menuU="matMenu">
+              <button mat-menu-item routerLink="/listaruser"> Listar  </button>
+              <button mat-menu-item routerLink="/registraruser"> Registrar </button>
+            </mat-menu>
+          </li>
 
+          <li>
+            <i class="bx bxs-buildings"></i>
+            <button mat-button [matMenuTriggerFor]="menuE">
+              Entidad Financiera
+            </button>
+            <mat-menu #menuE="matMenu">
+              <button mat-menu-item routerLink="/listarbankingentity">Listar</button>
+              <button mat-menu-item routerLink="/crearbankingentity">Registrar</button>
+            </mat-menu>
+          </li>
+          <li>
+            <i class="bx bxs-credit-card"></i>
+            <button mat-button [matMenuTriggerFor]="menuC"> Cuenta Bancaria</button>
+            <mat-menu #menuC="matMenu">
+              <button mat-menu-item routerLink="/listaraccountbanking"> Listar  </button>
+              <button mat-menu-item routerLink="/crearaccountbanking"> Registrar </button>
+            </mat-menu>
+          </li>
+          <li>
+            <i class="bx bxs-dollar-circle"></i>
+            <button mat-button [matMenuTriggerFor]="menuM">Movimientos</button>
+            <mat-menu #menuM="matMenu">
+              <button mat-menu-item routerLink="/listarmovement">Listar</button>
+              <button mat-menu-item routerLink="/crearmovement">Registrar</button>
+            </mat-menu>
+          </li>
+          <li>
+            <i class="bx bxs-bell"></i>
+            <button mat-button [matMenuTriggerFor]="menuN">Notificacion</button>
+            <mat-menu #menuN="matMenu">
+              <button mat-menu-item routerLink="/listarnotification">
+                Listar
+              </button>
+              <button mat-menu-item routerLink="/crearnotificacion">
+                Registrar
+              </button>
+            </mat-menu>
+          </li>
+          <li>
+            <i class="bx bxs-group"></i>
+            <button mat-button [matMenuTriggerFor]="menuS">Servicio</button>
+            <mat-menu #menuS="matMenu">
+              <button mat-menu-item routerLink="/listarservicio">Listar</button>
+              <button mat-menu-item routerLink="/crearservicio">
+                Registrar
+              </button>
+            </mat-menu>
+          </li>
+          <li>
+            <i class="bx bxs-briefcase-alt-2"></i>
+            <button mat-button [matMenuTriggerFor]="menuTS">
+              Tipo de Servicio
+            </button>
+            <mat-menu #menuTS="matMenu">
+              <button mat-menu-item routerLink="/listartypeservice">
+                Listar
+              </button>
+              <button mat-menu-item routerLink="/creartypeservice">
+                Registrar
+              </button>
+            </mat-menu>
+          </li>
+          <li>
+            <i class="bx bxs-receipt"></i>
+            <button mat-button [matMenuTriggerFor]="menuV">Voucher</button>
+            <mat-menu #menuV="matMenu">
+              <button mat-menu-item routerLink="/listarvoucher">Listar</button>
+              <button mat-menu-item routerLink="/crearvoucher">
+                Registrar
+              </button>
+            </mat-menu>
+          </li>
+          <li>
+            <i class="bx bx-log-in"></i>
+            <button mat-raised-button routerLink="/login">Salir</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
