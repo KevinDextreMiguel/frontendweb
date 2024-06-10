@@ -1,6 +1,11 @@
 <div class="title-container">
     <div class="title-container"><h1>Registro de notificacion</h1></div>
     <form [formGroup]="form" (submit)="registrar()">
+      <mat-form-field class="example-full-width"  *ngIf="edicion" >
+        <mat-label>Codigo</mat-label>
+        <input matInput placeholder="idNotification" formControlName="idNotification" />      
+      </mat-form-field>
+      <br />
       <mat-form-field>
         <input matInput placeholder="messageNotification" formControlName="messageNotification" />
         <mat-error *ngIf="form.get('messageNotification')?.hasError('required')">
@@ -39,6 +44,15 @@
           El id movement es obligatorio.</mat-error
         >
       </mat-form-field>-->
+      
+    <mat-form-field >
+      <mat-label>Nombre servicio</mat-label>
+      <mat-select placeholder="movement" formControlName="movement">
+        <mat-option *ngFor="let m of listarmovimen" [value]="m.idMovement">
+          {{ m.typeMovement }}
+        </mat-option>
+      </mat-select> 
+      </mat-form-field>
       <br/>
       <button mat-raised-button color="warn">Aceptar</button> 
     </form>

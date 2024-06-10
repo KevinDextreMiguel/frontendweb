@@ -21,7 +21,7 @@ import { CommonModule } from '@angular/common';
     SobrenosotrosComponent,
     NavegarComponent,
     RouterLink,
-    MatToolbarModule,RouterModule,MatIconModule,MatButtonModule,CommonModule
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

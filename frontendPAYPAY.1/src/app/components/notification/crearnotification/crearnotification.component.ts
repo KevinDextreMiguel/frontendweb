@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,ReactiveFormsModule,Validators} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -8,17 +8,19 @@ import moment from 'moment';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Notification } from '../../../models/notification';
 import { NotificationService } from '../../../services/notification.service';
 import { MatIconModule } from '@angular/material/icon';
+import { Movement } from '../../../models/movement';
+import { MovementService } from '../../../services/movement.service';
 
 @Component({
   selector: 'app-crearnotification',
   standalone: true,
   imports: [ReactiveFormsModule,
     MatFormFieldModule,MatIconModule,
-    MatInputModule,
+    MatInputModule,NgIf,RouterLink,
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -31,10 +33,15 @@ export class CrearnotificationComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   n: Notification=new Notification();
   maxFecha: Date = moment().add(-1, 'days').toDate();
+  edicion:boolean=false;
+  id:number=0;
+  listarmovimen:Movement[]=[];
   constructor(
     private formBuilder: FormBuilder,
     private nS: NotificationService,
-    private router: Router
+    private router: Router,
+    private nm:MovementService
+
   ) {}
 
   ngOnInit(): void {
@@ -42,7 +49,10 @@ export class CrearnotificationComponent implements OnInit {
       messageNotification: ['', Validators.required],
       dateShipNotification: ['',[Validators.required,]],
       stateNotification: ['', Validators.required],
-    //  movement: ['',[Validators.required]],
+      movement: ['',[Validators.required]],
+    });
+    this.nm.list().subscribe((data) => {
+      this.listarmovimen = data;
     });
   }
   registrar(): void {
@@ -50,7 +60,7 @@ export class CrearnotificationComponent implements OnInit {
       this.n.messageNotification = this.form.value.messageNotification;
       this.n.dateShipNotification = this.form.value.dateShipNotification;
       this.n.stateNotification = this.form.value.stateNotification;
-    //  this.n.movement = this.form.value.movement;
+       this.n.movement.idMovement = this.form.value.movement;
       this.nS.insert(this.n).subscribe((data) => {
         this.nS.list().subscribe((data) => {
           this.nS.setList(data);

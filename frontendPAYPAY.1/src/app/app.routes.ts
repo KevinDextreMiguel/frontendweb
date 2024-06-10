@@ -72,6 +72,7 @@ export const routes: Routes = [
 //notificaction
     { path: 'listarnotification', component: ListarnotificationComponent },
     { path: 'crearnotificacion', component: CrearnotificationComponent },
+    { path: 'editarnotification/:id', component: CrearnotificationComponent },
 //voucher
     { path: 'listarvoucher', component: ListarvoucherComponent },
     { path: 'crearvoucher', component: CrearvoucherComponent },

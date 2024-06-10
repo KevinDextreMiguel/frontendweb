@@ -78,7 +78,6 @@ export class RegistraruserComponent implements OnInit{
       this.u.ageUser = this.form.value.ageUser;
       this.u.cityUser = this.form.value.cityUser;
       this.u.cellphoneUser = this.form.value.cellphoneUser;
-
       this.u.gmailUser = this.form.value.gmailUser;
       this.u.password = this.form.value.password;
       this.u.enabled = this.form.value.enabled;

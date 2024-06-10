@@ -58,13 +58,13 @@
                 El nombre es obligatorio.</mat-error>
         </mat-form-field>
         <br />
-
-        <mat-form-field>
-            <input matInput placeholder="enabled" formControlName="enabled" />
-            <mat-error *ngIf="form.get('enabled')?.hasError('required')">
-                El nombre es obligatorio.</mat-error>
-        </mat-form-field>
-        <br />
+        <mat-form-field >
+            <mat-label>enable</mat-label>
+            <mat-select formControlName="enabled" required>
+                <mat-option value="true">true</mat-option>
+              </mat-select>
+          </mat-form-field>
+        <br/>
 
         <button mat-raised-button color="warn">Aceptar</button>
         <button mat-raised-button color="warn" routerLink="/listaruser">
