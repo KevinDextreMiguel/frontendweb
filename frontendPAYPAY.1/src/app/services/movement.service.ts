@@ -28,6 +28,7 @@ export class MovementService {
   getList() {
     return this.listaCambio.asObservable()
   }
+
   listId(id: number) {
     return this.httpClient.get<Movement>(`${this.url}/${id}`);
   }
