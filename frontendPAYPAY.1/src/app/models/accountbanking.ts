@@ -5,5 +5,5 @@ export class Accountbanking{
    typeAccountBanking:string=''
    amountAccountBanking:number=0.0
    dateOpening:Date=new Date()
-   entityBank: Bankingentity = new Bankingentity()
+   //entityBank: Bankingentity = new Bankingentity()
 }

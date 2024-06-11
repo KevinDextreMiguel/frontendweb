@@ -42,7 +42,7 @@ export class ListarbankingentityComponent implements OnInit{
   deleteBanking(id: number): void {
     this.dialog.open(SinodeletebankingentityComponent, {width: '250px'}).afterClosed().subscribe((res) => {
       if(res){
-        this.bS.delete(id).subscribe(()=> {
+        this.bS.eliminar(id).subscribe(()=> {
           this.bS.list().subscribe((data) => {
             this.bS.setList(data);
           });

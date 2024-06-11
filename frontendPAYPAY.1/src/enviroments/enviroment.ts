@@ -1,4 +1,4 @@
 export const enviroment = {
     production: false,
-    base:"http://localhost:8080"//puerto de backend
+    base:"http://localhost:8082"//puerto de backend
 }
