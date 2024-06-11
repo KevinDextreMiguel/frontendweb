@@ -1,60 +1,68 @@
 <div class="title-container">
-    <div class="title-container"><h1>Registro de Entidad Bancaria</h1></div>
-    <form [formGroup]="form" (submit)="registrar()">
-        <mat-form-field>
-            <mat-label>Nombre</mat-label>
-            <mat-select placeholder="nameBankingEntity" formControlName="nameBankingEntity">
-              <mat-option *ngFor="let m of nombres" [value]="m.value">
-                {{ m.viewValue }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="form.get('nameBankingEntity')?.hasError('required')">
-              El Nombre es obligatorio.</mat-error
-            >
-          </mat-form-field>
-          <br />
+  <div class="title-container"><h1>Registro de Entidad Bancaria</h1></div>
+  <form [formGroup]="form" (submit)="onSubmit()">
       <mat-form-field>
-        <input matInput placeholder="descriptionBankingEntity" formControlName="descriptionBankingEntity" />
-        <mat-error *ngIf="form.get('descriptionBankingEntity')?.hasError('required')">
-          La descripcion es obligatorio.</mat-error
-        >
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <input matInput placeholder="addressBankingEntity" formControlName="addressBankingEntity" />
-        <mat-error *ngIf="form.get('addressBankingEntity')?.hasError('required')">
-          La direccion es obligatorio.</mat-error
-        >
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <input matInput placeholder="cellphoneBankingEntity" formControlName="cellphoneBankingEntity" />
-        <mat-error *ngIf="form.get('cellphoneBankingEntity')?.hasError('required')">
-          El telefono es obligatorio.</mat-error
-        >
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <input matInput placeholder="websiteBankingEntity" formControlName="websiteBankingEntity" />
-        <mat-error *ngIf="form.get('websiteBankingEntity')?.hasError('required')">
-          El sitio web es obligatorio.</mat-error
-        >
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <input matInput placeholder="headquarterBankingEntity" formControlName="headquarterBankingEntity" />
-        <mat-error *ngIf="form.get('headquarterBankingEntity')?.hasError('required')">
-          El sede es obligatorio.</mat-error
-        >
-      </mat-form-field>
-      <br />
-     <!-- <mat-form-field>
-        <input matInput placeholder="user" formControlName="user" />
-        <mat-error *ngIf="form.get('user')?.hasError('required')">
-          El id del usuario es obligatorio.</mat-error
-        >
-      </mat-form-field>-->
-      <br />
-      <button mat-raised-button color="warn">Aceptar</button> 
-    </form>
-  </div>
+          <mat-label>Nombre</mat-label>
+          <mat-select placeholder="nameBankingEntity" formControlName="nameBankingEntity">
+            <mat-option *ngFor="let m of nombres" [value]="m.value">
+              {{ m.viewValue }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('nameBankingEntity')?.hasError('required')">
+            El Nombre es obligatorio.</mat-error
+          >
+        </mat-form-field>
+        <br />
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <input matInput placeholder="descriptionBankingEntity" formControlName="descriptionBankingEntity" />
+      <mat-error *ngIf="form.get('descriptionBankingEntity')?.hasError('required')">
+        La descripcion es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+       <mat-label>Direccion</mat-label>
+      <input matInput placeholder="addressBankingEntity" formControlName="addressBankingEntity" />
+      <mat-error *ngIf="form.get('addressBankingEntity')?.hasError('required')">
+        La direccion es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+       <mat-label>Telefono</mat-label>
+      <input matInput placeholder="cellphoneBankingEntity" formControlName="cellphoneBankingEntity" />
+      <mat-error *ngIf="form.get('cellphoneBankingEntity')?.hasError('required')">
+        El telefono es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+       <mat-label>Sitio Web</mat-label>
+      <input matInput placeholder="websiteBankingEntity" formControlName="websiteBankingEntity" />
+      <mat-error *ngIf="form.get('websiteBankingEntity')?.hasError('required')">
+        El sitio web es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+       <mat-label>Sede</mat-label>
+      <input matInput placeholder="headquarterBankingEntity" formControlName="headquarterBankingEntity" />
+      <mat-error *ngIf="form.get('headquarterBankingEntity')?.hasError('required')">
+        El sede es obligatorio.</mat-error
+      >
+    </mat-form-field>
+    <br />
+   <!-- <mat-form-field>
+      <input matInput placeholder="user" formControlName="user" />
+      <mat-error *ngIf="form.get('user')?.hasError('required')">
+        El id del usuario es obligatorio.</mat-error
+      >
+    </mat-form-field>-->
+    <br />
+    <button mat-raised-button color="warn">Aceptar</button> 
+    <button mat-raised-button color="primary" routerLink="/crearbankingentity">
+      Cancelar
+    </button>
+  </form>
+</div>

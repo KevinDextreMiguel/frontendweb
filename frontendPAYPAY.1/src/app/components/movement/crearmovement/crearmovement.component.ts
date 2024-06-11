@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Movement } from '../../../models/movement';
 import moment from 'moment';
 import { MovementService } from '../../../services/movement.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -16,14 +16,16 @@ import { MatSelectModule } from '@angular/material/select';
   selector: 'app-crearmovement',
   standalone: true,
   imports: [
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    CommonModule,
+    MatButtonModule,
     MatSelectModule,
+    MatFormFieldModule,
+    CommonModule,
+    NgIf,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule,
+    RouterLink,
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   templateUrl: './crearmovement.component.html',
   styleUrl: './crearmovement.component.css'

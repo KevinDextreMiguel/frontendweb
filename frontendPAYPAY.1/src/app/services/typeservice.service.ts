@@ -10,13 +10,13 @@ const base_url = enviroment.base;
 export class TypeserviceService {
   private url = `${base_url}/tiposervicios`;
   private listaCambio = new Subject<Typeservice[]>();
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
   list() {
-    return this.http.get<Typeservice[]>(this.url);
+    return this.httpClient.get<Typeservice[]>(this.url);
   }
 
   insert(t: Typeservice) {
-    return this.http.post(this.url, t);
+    return this.httpClient.post(this.url, t);
   }
   setList(listaNueva:Typeservice[]) {
     this.listaCambio.next(listaNueva);
@@ -24,6 +24,7 @@ export class TypeserviceService {
   getList() {
     return this.listaCambio.asObservable()
   }
+
   listId(id:number){
     return this.http.get<Typeservice>(`${this.url}/${id}`);
   }
@@ -32,5 +33,6 @@ export class TypeserviceService {
   }
   eliminar(id:number){
     return this.http.delete(`${this.url}/${id}`);
+
   }
 }

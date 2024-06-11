@@ -9,4 +9,5 @@ export class Bankingentity{
     websiteBankingEntity:string=''
     headquarterBankingEntity:string=''
     user: User =new User()
+
 }
