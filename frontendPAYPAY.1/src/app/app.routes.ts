@@ -67,6 +67,7 @@ export const routes: Routes = [
 //movement
     { path: 'crearmovement', component: CrearmovementComponent },
     { path: 'listarmovement', component: ListarmovementComponent },
+    { path: 'editarmovement/:id', component: CrearmovementComponent },
 //notificaction
     { path: 'listarnotification', component: ListarnotificationComponent },
     { path: 'crearnotificacion', component: CrearnotificationComponent },
@@ -83,6 +84,7 @@ export const routes: Routes = [
 //type service
     { path: 'listartypeservice', component: ListartypeserviceComponent },
     { path: 'creartypeservice', component: CreartypeserviceComponent },
+    { path: 'editatypeservice/:id', component: CreartypeserviceComponent },
 //role
     { path: 'listarrole', component: ListarroleComponent },
     { path: 'crearrole', component: CrearroleComponent },

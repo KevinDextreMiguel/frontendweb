@@ -1,13 +1,18 @@
-.container{
-    padding-left: 10%;
+.title-container {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 60px;
 }
 
-.title{
-    font-size: 40px;
-    color: blue;
+
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    color: #333;
 }
 
-th{
-    color: blue;
-    background-color: black;
+.container {
+    padding-left: 15%;
 }

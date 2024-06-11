@@ -5,7 +5,7 @@ export class Movement{
     dateMovement: Date=new Date(Date.now())
     typeMovement: string = ""
     amountMovement: number = 0.0
-    numberAccountBanking: Accountbanking | null = null
+    numberAccountBanking: Accountbanking =new Accountbanking()
 }
 
 

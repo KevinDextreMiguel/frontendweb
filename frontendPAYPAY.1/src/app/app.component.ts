@@ -5,6 +5,8 @@ import { SobrenosotrosComponent } from './views/sobrenosotros/sobrenosotros.comp
 import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +19,12 @@ import { HomeComponent } from './views/home/home.component';
     SobrenosotrosComponent,
     NavegarComponent,
     RouterLink,
-    NavegarComponent
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor(public router: Router) { }
   title = 'frontend';
 }
