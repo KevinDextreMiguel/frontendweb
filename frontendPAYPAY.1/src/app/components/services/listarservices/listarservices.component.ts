@@ -10,12 +10,12 @@ import { RouterLink } from '@angular/router';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-listarservices',
   standalone: true,
-  imports: [MatTableModule,ElimanarservicesComponent,MatButtonModule,MatFormFieldModule,RouterLink,MatPaginatorModule,MatInputModule,MatIconModule,CommonModule],
+  imports: [MatTableModule,NgIf,ElimanarservicesComponent,MatButtonModule,MatFormFieldModule,RouterLink,MatPaginatorModule,MatInputModule,MatIconModule,CommonModule],
   templateUrl: './listarservices.component.html',
   styleUrl: './listarservices.component.css'
 })
