@@ -77,6 +77,7 @@ export const routes: Routes = [
 //banking entity
     { path: 'listarbankingentity', component: ListarbankingentityComponent },
     { path: 'crearbankingentity', component: CrearbankingentityComponent },
+    { path: 'editarbankingentity/:id', component: CrearbankingentityComponent },
 //account banking
     { path: 'listaraccountbanking', component: ListaraccountbankingComponent },
     { path: 'crearaccountbanking', component: CrearaccountbankingComponent },
