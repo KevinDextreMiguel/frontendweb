@@ -7,5 +7,5 @@ export class Voucher{
    destinationAccountVoucher:number=0
    amountVoucher:number=0.0
    numberOperationVoucher:number=0
-   serviceB: Services | null = null
+   serviceB: Services =new Services()
 }

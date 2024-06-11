@@ -1,11 +1,6 @@
 <div class="container">
     <div class="title-container"><h1>Lista de Notificaciones</h1></div>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">      
-          <ng-container matColumnDef="idNotification">       
-           <th mat-header-cell *matHeaderCellDef>Código</th>       
-           <td mat-cell *matCellDef="let element"> {{element.idNotification}} </td>
-         </ng-container>       
-         
           <ng-container matColumnDef="messageNotification">       
            <th mat-header-cell *matHeaderCellDef> Mensaje </th>       
            <td mat-cell *matCellDef="let element"> {{element.messageNotification}} </td>
@@ -19,6 +14,23 @@
             <th mat-header-cell *matHeaderCellDef>Estado notificacion </th>       
             <td mat-cell *matCellDef="let element"> {{element.stateNotification}} </td>       
            </ng-container>
+
+           <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-fab color="primary" [routerLink]="['/editarnotification', element.idNotification]">
+                <mat-icon>edit</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-fab color="primary" (click)="eliminanotificacion(element.idNotification)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
           <!-- <ng-container matColumnDef="movement">       
             <th mat-header-cell *matHeaderCellDef> idmovement </th>       
             <td mat-cell *matCellDef="let element"> {{element.movement}} </td>       
@@ -26,4 +38,9 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>       
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>       
          </table>
+         <mat-paginator [pageSizeOptions]="[4, 20, 100]"
+         showFirstLastButtons
+         aria-label="Select page of periodic elements">
+     </mat-paginator>
   </div>
+

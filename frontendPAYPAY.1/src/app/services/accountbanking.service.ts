@@ -24,4 +24,14 @@ export class AccountbankingService {
   getList() {
     return this.listaCambio.asObservable()
   }
+  listId(id: number) {
+    return this.http.get<Accountbanking>(`${this.url}/${id}`);
+  }
+  update(c: Accountbanking) {
+    return this.http.put(this.url, c);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }

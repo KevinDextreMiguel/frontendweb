@@ -28,12 +28,11 @@ export class MovementService {
   getList() {
     return this.listaCambio.asObservable()
   }
-
   listId(id: number) {
     return this.httpClient.get<Movement>(`${this.url}/${id}`);
   }
-  update(m: Movement) {
-    return this.httpClient.put(this.url, m);
+  update(c: Movement) {
+    return this.httpClient.put(this.url, c);
   }
 
   eliminar(id: number) {

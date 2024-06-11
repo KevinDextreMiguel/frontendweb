@@ -61,9 +61,11 @@ export const routes: Routes = [
     //user
     { path: 'registraruser', component: RegistraruserComponent },
     { path: 'listaruser', component: ListaruserComponent },
+    { path: 'editaruser/:id', component: RegistraruserComponent },
 //services
     { path: 'listarservicio', component: ListarservicesComponent },
     { path: 'crearservicio', component: CrearservicioComponent },
+    { path: 'editarservicio/:id', component: CrearservicioComponent },
 //movement
     { path: 'crearmovement', component: CrearmovementComponent },
     { path: 'listarmovement', component: ListarmovementComponent },
@@ -71,9 +73,11 @@ export const routes: Routes = [
 //notificaction
     { path: 'listarnotification', component: ListarnotificationComponent },
     { path: 'crearnotificacion', component: CrearnotificationComponent },
+    { path: 'editarnotification/:id', component: CrearnotificationComponent },
 //voucher
     { path: 'listarvoucher', component: ListarvoucherComponent },
     { path: 'crearvoucher', component: CrearvoucherComponent },
+    { path: 'editarvoucher/:id', component: CrearvoucherComponent },
 //banking entity
     { path: 'listarbankingentity', component: ListarbankingentityComponent },
     { path: 'crearbankingentity', component: CrearbankingentityComponent },

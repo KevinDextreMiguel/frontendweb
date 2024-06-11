@@ -27,3 +27,9 @@
     width: 40%;
   
    }
+   .button-container {
+    display: flex; /* Usar flexbox para centrar los botones */
+    justify-content: center; /* Centrar los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 20px; /* Añadir un poco de espacio superior si es necesario */
+  }
