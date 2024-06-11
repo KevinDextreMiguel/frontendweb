@@ -30,15 +30,14 @@ export class MovementService {
   }
 
   listId(id: number) {
-    return this.http.get<Movement>(`${this.url}/${id}`);
+    return this.httpClient.get<Movement>(`${this.url}/${id}`);
   }
   update(c: Movement) {
-    return this.http.put(this.url, c);
+    return this.httpClient.put(this.url, c);
   }
 
   eliminar(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
-
+    return this.httpClient.delete(`${this.url}/${id}`);
   }
 }
 
