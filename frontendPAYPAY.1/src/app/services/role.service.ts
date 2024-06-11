@@ -24,4 +24,14 @@ export class RoleService {
   getList() {
     return this.listaCambio.asObservable()
   }
+  listId(id: number) {
+    return this.http.get<Role>(`${this.url}/${id}`);
+  }
+  update(c: Role) {
+    return this.http.put(this.url, c);
+  }
+
+  eliminar(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }

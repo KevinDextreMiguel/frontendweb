@@ -24,13 +24,15 @@ export class BankingentityService {
   getList() {
     return this.listaCambio.asObservable()
   }
-  getById(id: number) {
-    return this.http.get<Bankingentity>(`${this.url}/listarid/${id}`);
+
+  listId(id: number) {
+    return this.http.get<Bankingentity>(`${this.url}/${id}`);
   }
-  update(b: Bankingentity) {
-    return this.http.put(this.url, b);
+  update(c: Bankingentity) {
+    return this.http.put(this.url, c);
   }
-  delete(id: number){
+
+  eliminar(id: number) {
     return this.http.delete(`${this.url}/${id}`);
   }
 }

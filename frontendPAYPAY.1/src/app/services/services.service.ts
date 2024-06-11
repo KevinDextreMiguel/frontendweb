@@ -29,4 +29,13 @@ export class ServicesService {
   getList() {
     return this.listaCambio.asObservable()
   }
+  listId(id:number){
+    return this.http.get<Services>(`${this.url}/${id}`);
+  }
+  update(s:Services){
+    return this.http.put(this.url,s);
+  }
+  eliminar(id:number){
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }
