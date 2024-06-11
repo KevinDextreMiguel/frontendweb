@@ -24,6 +24,7 @@ export class BankingentityService {
   getList() {
     return this.listaCambio.asObservable()
   }
+
   listId(id: number) {
     return this.http.get<Bankingentity>(`${this.url}/${id}`);
   }

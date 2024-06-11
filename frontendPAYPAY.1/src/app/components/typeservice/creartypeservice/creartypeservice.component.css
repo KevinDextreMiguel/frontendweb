@@ -24,6 +24,11 @@
   
    mat-form-field {
   
-    width: 40%;
+    width: 30%;
   
    }
+
+.buttoncontainer{
+    padding-left: 2%;
+    display:inline;
+}

@@ -2,6 +2,11 @@
 <div class="title-container">
     <div class="title-container"><h1>Registro de Movimiento</h1></div>
     <form [formGroup]="form" (submit)="registrar()">
+
+
+
+
+
         <mat-form-field appearance="fill" class="example-full-width">
             <input
               matInput placeholder="Ingrese fecha"
@@ -43,7 +48,10 @@
         >
       </mat-form-field>
       <br />
-      <button mat-raised-button color="warn">Aceptar</button> 
+      <button mat-raised-button color="primary">Aceptar</button> 
+      <button mat-raised-button color="warn" routerLink="/listarmovement">
+        Cancelar
+      </button>
     </form>
   </div>
   

@@ -1,13 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {  MatTableModule } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
 import { Movement } from '../../../models/movement';
 import { MovementService } from '../../../services/movement.service';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterLink } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-listarmovement',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [
+    MatButtonModule,
+    MatTableModule,//
+    MatFormFieldModule,//
+    RouterLink,//
+    MatPaginatorModule,//
+    MatInputModule,
+    MatIconModule//
+  ],
   templateUrl: './listarmovement.component.html',
   styleUrl: './listarmovement.component.css'
 })
@@ -18,19 +32,32 @@ export class ListarmovementComponent implements OnInit{
     'fecha',
     'tipo',
     'cantidad',
-    'numero'
+    'numero',
+    'editar',
+    'eliminar'
   ];
 
   dataSource: MatTableDataSource<Movement> = new MatTableDataSource();
-
+  
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private mS: MovementService) { }
 
   ngOnInit(): void {
     this.mS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data)
+      this.dataSource.paginator = this.paginator;
     });
     this.mS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data)
+      this.dataSource.paginator = this.paginator;
     })
+  }
+
+  eliminar(id: number) {
+    this.mS.eliminar(id).subscribe((data) => {
+      this.mS.list().subscribe((data) => {
+        this.mS.setList(data);
+      });
+    });
   }
 }
