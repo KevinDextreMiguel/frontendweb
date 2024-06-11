@@ -63,9 +63,14 @@ export class CrearvoucherComponent {
   }
   registrar(): void {
     if (this.form.valid) {
+      const time = this.form.value.hourVoucher;
+      console.log(this.form.value)
       this.v.idVoucher = this.form.value.idVoucher;
       this.v.dateVoucher = this.form.value.dateVoucher;
-      this.v.hourVoucher = this.form.value.hourVoucher;
+      const [hora , minuto] = time.split(":");
+      let dateA:Date = new Date();
+      dateA.setHours(hora, minuto);
+      this.v.hourVoucher = dateA;
       this.v.destinationAccountVoucher = this.form.value.destinationAccountVoucher;
       this.v.amountVoucher = this.form.value.amountVoucher;
       this.v.numberOperationVoucher = this.form.value.numberOperationVoucher;
@@ -88,7 +93,7 @@ export class CrearvoucherComponent {
           destinationAccountVoucher: new FormControl(data.destinationAccountVoucher),
           amountVoucher: new FormControl(data.amountVoucher),
           numberOperationVoucher: new FormControl(data.numberOperationVoucher),
-          serviceB: new FormControl(data.serviceB?.nameService),
+          serviceB: new FormControl(data.serviceB),
         });
       });
     }

@@ -56,7 +56,7 @@ export class CrearbankingentityComponent implements OnInit {
       //user: ['', [Validators.required]],
     });
     if(this.id){
-      this.bS.getById(this.id).subscribe((data: Bankingentity)=>{
+      this.bS.listId(this.id).subscribe((data: Bankingentity)=>{
         this.form.patchValue(data);
       })
     }

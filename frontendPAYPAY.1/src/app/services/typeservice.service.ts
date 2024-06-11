@@ -10,13 +10,13 @@ const base_url = enviroment.base;
 export class TypeserviceService {
   private url = `${base_url}/tiposervicios`;
   private listaCambio = new Subject<Typeservice[]>();
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
   list() {
-    return this.httpClient.get<Typeservice[]>(this.url);
+    return this.http.get<Typeservice[]>(this.url);
   }
 
   insert(t: Typeservice) {
-    return this.httpClient.post(this.url, t);
+    return this.http.post(this.url, t);
   }
   setList(listaNueva:Typeservice[]) {
     this.listaCambio.next(listaNueva);

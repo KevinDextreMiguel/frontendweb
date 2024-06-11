@@ -14,13 +14,13 @@ const base_url = enviroment.base
 export class MovementService {
   private url = `${base_url}/movimientos`;
   private listaCambio = new Subject<Movement[]>();
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
   list() {
-    return this.httpClient.get<Movement[]>(this.url);
+    return this.http.get<Movement[]>(this.url);
   }
 
   insert(m: Movement) {
-    return this.httpClient.post(this.url, m);
+    return this.http.post(this.url, m);
   }
   setList(listaNueva: Movement[]) {
     this.listaCambio.next(listaNueva);
