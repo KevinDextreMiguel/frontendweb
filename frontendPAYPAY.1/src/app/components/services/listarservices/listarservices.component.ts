@@ -25,7 +25,8 @@ export class ListarservicesComponent implements OnInit{
     'descriptionService',
      'dateService',
       'timeService', 
-      'nombre','tiposervicio','editar','delete'];
+      'nombre','tiposervicio',
+      'editar','delete'];
   dataSource: MatTableDataSource<Services> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private sS: ServicesService,public dialog: MatDialog) { }

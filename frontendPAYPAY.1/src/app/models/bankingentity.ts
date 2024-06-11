@@ -8,6 +8,6 @@ export class Bankingentity{
     cellphoneBankingEntity:string=''
     websiteBankingEntity:string=''
     headquarterBankingEntity:string=''
-    user: User = new User()
+   // user: User = new User()
 
 }

@@ -63,12 +63,18 @@ export class CrearvoucherComponent {
   }
   registrar(): void {
     if (this.form.valid) {
+      const time = this.form.value.hourVoucher;
       this.v.idVoucher = this.form.value.idVoucher;
       this.v.dateVoucher = this.form.value.dateVoucher;
       this.v.hourVoucher = this.form.value.hourVoucher;
       this.v.destinationAccountVoucher = this.form.value.destinationAccountVoucher;
       this.v.amountVoucher = this.form.value.amountVoucher;
       this.v.numberOperationVoucher = this.form.value.numberOperationVoucher;
+      const [hora , minuto] = time.split(":");
+      let dateA:Date = new Date();
+      dateA.setHours(hora, minuto);
+      this.v.hourVoucher = dateA;
+    
       this.v.serviceB.idService = this.form.value.serviceB;
       this.vS.insert(this.v).subscribe((data) => {
         this.vS.list().subscribe((data) => {

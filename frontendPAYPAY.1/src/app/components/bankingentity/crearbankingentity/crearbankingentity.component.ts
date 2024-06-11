@@ -56,7 +56,7 @@ export class CrearbankingentityComponent implements OnInit {
       //user: ['', [Validators.required]],
     });
     if(this.id){
-      this.bS.getById(this.id).subscribe((data: Bankingentity)=>{
+      this.bS.listId(this.id).subscribe((data: Bankingentity)=>{
         this.form.patchValue(data);
       })
     }
@@ -73,8 +73,8 @@ export class CrearbankingentityComponent implements OnInit {
       this.b.addressBankingEntity = this.form.value.addressBankingEntity;
       this.b.cellphoneBankingEntity = this.form.value.cellphoneBankingEntity;
       this.b.websiteBankingEntity = this.form.value.websiteBankingEntity;
-      this.b.headquarterBankingEntity=this.form.value.headquarterBankingEntity,
-      this.b.user.idUser = parseInt(localStorage.getItem('idUser') || '0');
+      this.b.headquarterBankingEntity=this.form.value.headquarterBankingEntity;
+     // this.b.user.idUser = parseInt(localStorage.getItem('idUser') || '0');
       if(this.id){
         this.b.idBankingEntity = this.id;
         this.bS.update(this.b).subscribe(() => {

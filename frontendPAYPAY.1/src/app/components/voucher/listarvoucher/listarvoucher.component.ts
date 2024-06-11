@@ -20,7 +20,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './listarvoucher.component.css'
 })
 export class ListarvoucherComponent {
-  displayedColumns: string[] = ['dateVoucher', 'hourVoucher','destinationAccountVoucher','amountVoucher','numberOperationVoucher','serviceB','editar','delete'];
+  displayedColumns: string[] = ['dateVoucher', 'hourVoucher','destinationAccountVoucher','amountVoucher','numberOperationVoucher',
+   // 'serviceB',
+    'editar','delete'];
   dataSource: MatTableDataSource<Voucher> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private vS: VoucherService,public dialog: MatDialog) {}
