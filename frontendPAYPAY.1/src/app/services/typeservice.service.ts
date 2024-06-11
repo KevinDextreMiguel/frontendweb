@@ -24,13 +24,15 @@ export class TypeserviceService {
   getList() {
     return this.listaCambio.asObservable()
   }
-  listId(id:number){
+
+  listId(id: number) {
     return this.httpClient.get<Typeservice>(`${this.url}/${id}`);
   }
-  update(s:Typeservice){
-    return this.httpClient.put(this.url,s);
+  update(ts: Typeservice) {
+    return this.httpClient.put(this.url, ts);
   }
-  eliminar(id:number){
+
+  eliminar(id: number) {
     return this.httpClient.delete(`${this.url}/${id}`);
   }
 }
